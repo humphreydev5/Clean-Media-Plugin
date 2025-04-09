@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create ZIP
+        run: zip -r clean-unused-images-${{ github.ref_name }}.zip .
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./clean-unused-images-${{ github.ref_name }}.zip
+          asset_name: clean-unused-images-${{ github.ref_name }}.zip
+          asset_content_type: application/zip

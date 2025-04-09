@@ -1,0 +1,34 @@
+.clean-images-header {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #f1f1f1;
+    height: 20px;
+    margin: 20px 0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: #0073aa;
+    transition: width 0.3s ease;
+}
+
+.tablenav-pages {
+    display: inline-block;
+    float: right;
+    margin: 0;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input[type="search"] {
+    width: 300px;
+    margin-right: 10px;
+}
